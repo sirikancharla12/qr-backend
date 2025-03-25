@@ -8,7 +8,9 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: "https://qr-frontend-sigma.vercel.app"
+  }));
 
 app.use("/api/auth", userRoutes);
 app.use("/api/pass", passRoutes);
